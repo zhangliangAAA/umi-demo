@@ -26,6 +26,7 @@ export default {
         {
           path: '/goods',
           component: './goods',
+          Routes: ['./routes/PrivateRoute.js'], // 权限：这里相对根目录，文件名后缀不能少
         },
         {
           path: '/',
@@ -44,6 +45,7 @@ export default {
               component: './users/$id',
             },
           ],
+          Routes: ['./routes/PrivateRoute.js'], // 权限：这里相对根目录，文件名后缀不能少
         },
         {
           component: './NotFound',

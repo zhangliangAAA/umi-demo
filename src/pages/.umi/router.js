@@ -31,6 +31,7 @@ const routes = [
       {
         path: '/goods',
         component: require('../goods').default,
+        Routes: [require('../../../routes/PrivateRoute.js').default],
         exact: true,
       },
       {
@@ -61,6 +62,7 @@ const routes = [
               ),
           },
         ],
+        Routes: [require('../../../routes/PrivateRoute.js').default],
       },
       {
         component: require('../NotFound').default,

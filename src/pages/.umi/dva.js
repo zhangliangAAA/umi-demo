@@ -20,8 +20,9 @@ export function _onCreate() {
     app.use(plugin);
   });
   
-  app.model({ namespace: 'goods', ...(require('/Users/zhanglianghao/Desktop/react-umi/src/models/goods.js').default) });
+  app.model({ namespace: 'cart', ...(require('/Users/zhanglianghao/Desktop/react-umi/src/models/cart.js').default) });
 app.model({ namespace: 'user', ...(require('/Users/zhanglianghao/Desktop/react-umi/src/models/user.js').default) });
+app.model({ namespace: 'goods', ...(require('/Users/zhanglianghao/Desktop/react-umi/src/pages/goods/models/goods.js').default) });
   return app;
 }
 
