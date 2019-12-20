@@ -1,0 +1,79 @@
+{
+  "window.zoomLevel": 0,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "eslint.run": "onSave",
+  "eslint.autoFixOnSave": true,
+  
+  "eslint.alwaysShowStatus": true,  
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "wxml": "html"
+  },
+  "files.exclude": {
+    "**/.git": false
+  },  
+  "editor.formatOnSave": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.stylelintIntegration": true, 
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false, 
+  "javascript.updateImportsOnFileMove.enabled": "always", 
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "fileheader.configObj": {
+    "prohibitAutoAdd": [ "json","md"], 
+    "language": {
+      "vue": {
+        "head": "<!--",
+        "middle": " * @",
+        "end": " -->"
+      },
+      "js": {
+        "head": "/*",
+        "middle": " * @",
+        "end": " */"
+      }
+    },
+    "autoAdd": false
+  },
+  "fileheader.customMade": {
+    "Author": "your name",
+    "Date": "",
+    "LastEditors": "your name",
+    "LastEditTime": "",
+    "Description": "",
+  },
+  "git.autofetch": true,
+  "editor.wordWrap": "on",
+  "files.autoSaveDelay": 10000,
+  "update.mode": "manual",
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
