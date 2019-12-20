@@ -21,6 +21,7 @@ export function _onCreate() {
   });
   
   app.model({ namespace: 'goods', ...(require('/Users/zhanglianghao/Desktop/react-umi/src/models/goods.js').default) });
+app.model({ namespace: 'user', ...(require('/Users/zhanglianghao/Desktop/react-umi/src/models/user.js').default) });
   return app;
 }
 

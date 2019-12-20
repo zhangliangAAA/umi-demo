@@ -14,38 +14,56 @@ const Router = routerRedux.ConnectedRouter;
 
 const routes = [
   {
-    path: '/about',
-    component: require('../about').default,
-    Routes: [require('../../../routes/PrivateRoute.js').default],
-    exact: true,
-  },
-  {
-    path: '/login',
-    component: require('../login').default,
-    exact: true,
-  },
-  {
-    path: '/goods',
-    component: require('../goods').default,
-    exact: true,
-  },
-  {
     path: '/',
-    component: require('../index').default,
-    exact: true,
-  },
-  {
-    path: '/users',
-    component: require('../users/_layout').default,
+    component: require('../../layout').default,
     routes: [
       {
-        path: '/users/',
-        component: require('../users/index').default,
+        path: '/about',
+        component: require('../about').default,
+        Routes: [require('../../../routes/PrivateRoute.js').default],
         exact: true,
       },
       {
-        path: '/users/:id',
-        component: require('../users/$id').default,
+        path: '/login',
+        component: require('../login').default,
+        exact: true,
+      },
+      {
+        path: '/goods',
+        component: require('../goods').default,
+        exact: true,
+      },
+      {
+        path: '/',
+        component: require('../index').default,
+        exact: true,
+      },
+      {
+        path: '/users',
+        component: require('../users/_layout').default,
+        routes: [
+          {
+            path: '/users/',
+            component: require('../users/index').default,
+            exact: true,
+          },
+          {
+            path: '/users/:id',
+            component: require('../users/$id').default,
+            exact: true,
+          },
+          {
+            component: () =>
+              React.createElement(
+                require('/Users/zhanglianghao/Desktop/react-umi/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+                  .default,
+                { pagesPath: 'src/pages', hasRoutesInConfig: true },
+              ),
+          },
+        ],
+      },
+      {
+        component: require('../NotFound').default,
         exact: true,
       },
       {
@@ -57,10 +75,6 @@ const routes = [
           ),
       },
     ],
-  },
-  {
-    component: require('../NotFound').default,
-    exact: true,
   },
   {
     component: () =>

@@ -1,13 +1,36 @@
+import styles from "./login.css";
+import Login from 'ant-design-pro/lib/Login';
+import { Alert, Checkbox } from 'antd';
+import { connect } from "dva";
 
-import styles from './login.css';
+const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
 
-import { Button } from "antd";
-
-export default function() {
-  return (
-    <div className={styles.normal}>
-      <h1>Page login</h1>
-      <Button>登录</Button>
-    </div>
-  );
+@connect()
+export default class LoginDemo extends React.Component {
+  state = {
+    notice: '',
+    type: 'tab2',
+    autoLogin: true,
+  };
+  onSubmit = (err, values) => {
+    console.log('value collected ->', {
+      ...values,
+      autoLogin: this.state.autoLogin,
+    });
+    if (!err){
+      //登录
+      this.props.dispatch({type: 'user/login', payload: values})
+    } 
+  };
+  render() {
+    return (
+      <div className={styles.loginForm}>
+        <Login onSubmit={this.onSubmit}>
+            <UserName name="username" />
+            <Password name="password" />
+          <Submit>Login</Submit>
+        </Login>
+      </div>
+    );
+  }
 }
