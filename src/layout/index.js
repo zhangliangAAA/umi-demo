@@ -11,7 +11,7 @@ export default connect(state =>({
   count: state.cart.length,
   cart: state.cart
 }))(function(props) {
-  const menus = ['/', '/users', 'about']
+  const menus = ['/', '/users', '/about','/goods']
   const selectedKeys = menus.filter(item => {
     if(item === '/'){
       return props.location.pathname === item
@@ -34,7 +34,10 @@ export default connect(state =>({
       <Header>
         <Menu theme="dark" mode="horizontal" selectedKeys={selectedKeys} style={{ lineHeight: '64px', float: 'left' }}>
           <Menu.Item key="/">
-            <Link to="/">商品</Link>
+            <Link to="/">首页</Link>
+          </Menu.Item>
+          <Menu.Item key="/goods">
+            <Link to="/goods">商品</Link>
           </Menu.Item>
           <Menu.Item key="/users">
             <Link to="/users">用户</Link>

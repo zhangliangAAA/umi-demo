@@ -16,7 +16,7 @@ export default connect(state => ({ isLogin: !!state.user.token }))(props => {
   }
   return (
     <div>
-      <div>PrivateRoute (routes/PrivateRoute.js)</div>
+      <div>权限页面</div>
       {props.children}
     </div>
   );
